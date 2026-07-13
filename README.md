@@ -1,6 +1,18 @@
-# Spring AI Demo
+# Spring AI Knowledge Assistant
 
-A minimal Spring Boot GenAI knowledge assistant built for internship preparation.
+A Spring Boot GenAI service for document-grounded Q&A: upload documents, then ask
+natural-language questions answered from their content — with a pluggable AI layer
+that swaps between a mock client (for hermetic tests) and a real OpenAI-compatible
+provider.
+
+**✅ 5/5 automated controller tests passing** (`./mvnw test`, no API key required).
+
+```bash
+# Ask a question against uploaded documents (mock mode, no key needed)
+curl -X POST localhost:8080/api/questions/ask \
+  -H 'Content-Type: application/json' \
+  -d '{"question": "What is the refund policy?"}'
+```
 
 This project demonstrates how to:
 
